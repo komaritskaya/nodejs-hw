@@ -1,12 +1,5 @@
 #!/usr/bin/env node
-const readline = require('readline');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false,
+process.stdin.on('data', data => {
+  process.stdout.write(`${data.toString().split('').reverse().join('')}\n`);
 });
-
-rl.on('line', (line) => {
-    console.log(line.split('').reverse().join(''));
-})
